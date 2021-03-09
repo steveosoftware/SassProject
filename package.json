@@ -6,6 +6,8 @@
   "main": "index.js",
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
     "watch:sass": "nodemon -e scss -x \"npm run compile:sass -w\"",
     "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
     "prefix:css": "postcss css/style.concat.css --use autoprefixer -o css/style.prefix.css",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "autoprefixer": "^10.2.4",
     "concat": "^1.0.3",
+    "live-server": "^1.2.1",
     "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.7",
